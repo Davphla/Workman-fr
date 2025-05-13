@@ -1,3 +1,6 @@
+# TODO
+Create a efficient and usable keyboard layout for french speaker (éè...)
+
 Workman keyboard layouts
 ========================
 
