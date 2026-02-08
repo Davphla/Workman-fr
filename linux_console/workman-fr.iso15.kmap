@@ -1,0 +1,91 @@
+# workman-fr.kmap for Linux console.
+# French-optimized Workman layout with direct AltGr access to accented characters.
+# Based on the Workman layout — https://workmanlayout.org
+# French adaptation — https://github.com/Davphla/Workman-fr
+#
+# AltGr layer:
+# ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+# │    │    │    │    │    │    │ û  │ ù  │ ü  │ «» │
+# ├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
+# │ à  │ â  │    │    │    │ ë  │ è  │ é  │ ô  │ î  │
+# ├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
+# │    │    │    │ ç  │ æ  │ œ  │ ê  │ €  │ ï  │    │
+# └────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+
+alt_is_meta
+charset "iso-8859-15"  # use a ISO-8859-15 font, e.g.: consolechars -f lat9v-14
+keymaps 0-12
+include "qwerty-layout"
+include "linux-with-alt-and-altgr"
+strings as usual
+
+keycode  41 =          grave    asciitilde       dead_tilde        asciitilde    nul
+keycode   2 =            one        exclam       exclamdown       onesuperior
+keycode   3 =            two            at        masculine       twosuperior    nul
+keycode   4 =          three    numbersign      ordfeminine     threesuperior    Escape
+keycode   5 =           four        dollar             cent          sterling    Control_backslash
+keycode   6 =           five       percent             euro               yen    Control_bracketright
+keycode   7 =            six   asciicircum       asciitilde        asciitilde    Control_asciicircum
+keycode   8 =          seven     ampersand              eth               ETH    Control_underscore
+keycode   9 =          eight      asterisk            thorn             THORN    Delete
+keycode  10 =           nine     parenleft       asciitilde        asciitilde
+keycode  11 =           zero    parenright       asciitilde        asciitilde
+keycode  12 =          minus    underscore       asciitilde        asciitilde    Control_underscore
+keycode  13 =          equal          plus         multiply          division
+
+# ── Top row (AD) ─────────────────────────────────────────────────────
+#                      normal        Shift          AltGr         AltGr+Shift
+keycode  16 =              q             Q                q                 Q    Control_q
+keycode  17 =              d             D                d                 D    Control_d
+keycode  18 =              r             R                r                 R    Control_r
+keycode  19 =              w             W                w                 W    Control_w
+keycode  20 =              b             B                b                 B    Control_b
+keycode  21 =              j             J                j                 J    Control_j
+keycode  22 =              f             F      ucircumflex       Ucircumflex    Control_f   # û Û  (u-cluster)
+keycode  23 =              u             U           ugrave            Ugrave    Control_u   # ù Ù  (u-cluster)
+keycode  24 =              p             P       udiaeresis        Udiaeresis    Control_p   # ü Ü  (u-cluster)
+keycode  25 =      semicolon         colon    guillemotleft    guillemotright                # « »
+keycode  26 =    bracketleft     braceleft    guillemotleft        asciitilde    Escape
+keycode  27 =   bracketright    braceright   guillemotright        asciitilde    Control_bracketright
+keycode  43 =      backslash           bar       asciitilde        asciitilde    Control_backslash
+
+# ── Home row (AC) ────────────────────────────────────────────────────
+keycode  30 =              a             A           agrave            Agrave    Control_a   # à À
+keycode  31 =              s             S      acircumflex       Acircumflex    Control_s   # â Â  (next to à)
+keycode  32 =              h             H                h                 H    Control_h
+keycode  33 =              t             T                t                 T    Control_t
+keycode  34 =              g             G                g                 G    Control_g
+keycode  35 =              y             Y       ediaeresis        Ediaeresis    Control_y   # ë Ë  (e-cluster)
+keycode  36 =              n             N           egrave            Egrave    Control_n   # è È  (e-cluster)
+keycode  37 =              e             E           eacute            Eacute    Control_e   # é É  (e-cluster)
+keycode  38 =              o             O      ocircumflex       Ocircumflex    Control_o   # ô Ô  (on its own letter)
+keycode  39 =              i             I      icircumflex       Icircumflex    Control_i   # î Î  (on its own letter)
+keycode  40 =     apostrophe      quotedbl           otilde            Otilde
+
+# ── Bottom row (AB) ──────────────────────────────────────────────────
+keycode  44 =              z             Z                z                 Z    Control_z
+keycode  45 =              x             X                x                 X    Control_x
+keycode  46 =              m             M                m                 M    Control_m
+keycode  47 =              c             C         ccedilla          Ccedilla    Control_c   # ç Ç
+keycode  48 =              v             V               ae                AE    Control_v   # æ Æ
+keycode  49 =              k             K               oe                OE    Control_k   # œ Œ
+keycode  50 =              l             L      ecircumflex       Ecircumflex    Control_l   # ê Ê  (below è)
+keycode  51 =          comma          less             euro          EuroSign                # €
+keycode  52 =         period       greater       idiaeresis        Idiaeresis               # ï Ï  (below î)
+keycode  53 =          slash      question     questiondown        asciitilde    Delete
+
+keycode  58 =      BackSpace        Escape        BackSpace         BackSpace
+keycode  86 =          minus    underscore       asciitilde        asciitilde    Control_underscore
+keycode  57 =          space         space            space      nobreakspace    nul
+
+
+keycode   1 = Escape
+keycode  14 = Delete
+keycode  15 = Tab
+keycode  28 = Return
+        alt     keycode  28 = Meta_Control_m
+keycode  29 = Control
+keycode  42 = Shift
+keycode  54 = Shift
+keycode  56 = Alt
+keycode  97 = Control

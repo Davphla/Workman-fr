@@ -1,0 +1,67 @@
+// Workman-FR Keyboard Layout symbols for xkb on X.Org Server 7.x
+// French-optimized Workman layout with direct AltGr access to accented characters.
+// No dead keys needed — single keypress (AltGr+key) for é, è, ê, à, ù, ç, œ, etc.
+//
+// Based on the Workman layout by OJ Bucao (https://workmanlayout.org)
+// French adaptation by Davphla — https://github.com/Davphla/Workman-fr
+//
+// Character frequency source: sttmedia.com/characterfrequency-french
+//
+// AltGr layer (level 3/4):
+// ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+// │    │    │    │    │    │    │ û  │ ù  │ ü  │ «» │
+// ├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
+// │ à  │ â  │    │    │    │ ë  │ è  │ é  │ ô  │ î  │
+// ├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
+// │    │    │    │ ç  │ æ  │ œ  │ ê  │ €  │ ï  │    │
+// └────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "French (Workman-FR)";
+
+    include "us(basic)"
+
+    // ── Top row (AD) ────────────────────────────────────────────────
+    //                    normal      Shift       AltGr          AltGr+Shift
+    key <AD01> { [     q,          Q,              q,             Q ] };
+    key <AD02> { [     d,          D,              d,             D ] };
+    key <AD03> { [     r,          R,              r,             R ] };
+    key <AD04> { [     w,          W,              w,             W ] };
+    key <AD05> { [     b,          B,              b,             B ] };
+    key <AD06> { [     j,          J,              j,             J ] };
+    key <AD07> { [     f,          F,    ucircumflex,   Ucircumflex ] }; // û Û  (u-cluster)
+    key <AD08> { [     u,          U,         ugrave,        Ugrave ] }; // ù Ù  (u-cluster)
+    key <AD09> { [     p,          P,     udiaeresis,    Udiaeresis ] }; // ü Ü  (u-cluster)
+    key <AD10> { [ semicolon,  colon,  guillemotleft, guillemotright] }; // « »
+
+    // ── Home row (AC) ───────────────────────────────────────────────
+    key <AC01> { [     a,          A,         agrave,        Agrave ] }; // à À
+    key <AC02> { [     s,          S,    acircumflex,   Acircumflex ] }; // â Â  (next to à)
+    key <AC03> { [     h,          H,              h,             H ] };
+    key <AC04> { [     t,          T,              t,             T ] };
+    key <AC05> { [     g,          G,              g,             G ] };
+    key <AC06> { [     y,          Y,     ediaeresis,    Ediaeresis ] }; // ë Ë  (e-cluster)
+    key <AC07> { [     n,          N,         egrave,        Egrave ] }; // è È  (e-cluster)
+    key <AC08> { [     e,          E,         eacute,        Eacute ] }; // é É  (e-cluster)
+    key <AC09> { [     o,          O,    ocircumflex,   Ocircumflex ] }; // ô Ô  (on its own letter)
+    key <AC10> { [     i,          I,    icircumflex,   Icircumflex ] }; // î Î  (on its own letter)
+
+    // ── Bottom row (AB) ─────────────────────────────────────────────
+    key <AB01> { [     z,          Z,              z,             Z ] };
+    key <AB02> { [     x,          X,              x,             X ] };
+    key <AB03> { [     m,          M,              m,             M ] };
+    key <AB04> { [     c,          C,       ccedilla,      Ccedilla ] }; // ç Ç
+    key <AB05> { [     v,          V,             ae,            AE ] }; // æ Æ
+    key <AB06> { [     k,          K,             oe,            OE ] }; // œ Œ
+    key <AB07> { [     l,          L,    ecircumflex,   Ecircumflex ] }; // ê Ê  (below è)
+    key <AB08> { [ comma,       less,       EuroSign,      EuroSign ] }; // €
+    key <AB09> { [ period,    greater,    idiaeresis,    Idiaeresis ] }; // ï Ï  (below î)
+    key <AB10> { [ slash,    question,   questiondown,   asciitilde ] };
+    // End alphanumeric section
+
+    key <CAPS> { [ BackSpace,  Escape,     BackSpace,     BackSpace ] };
+
+    include "level3(ralt_switch)"
+};
